@@ -1,0 +1,31 @@
+{# src/Acme/BlogBundle/Resources/views/Page/show.html.twig #}
+{% extends 'BlogBundle::layout.html.twig' %}
+
+{% block body %}
+	<div class="center_div">
+		<p id="d">Blog Website</p>
+	    {% if app.user %}
+            <p style="font-size:12px;">Logged in as: <b>{{ app.user.username }} </b>
+            <a href="{{path('logout')}}" >Logout</a></p>
+        {%endif%}
+    </div>
+{%if is_granted('ROLE_ADMIN')%}
+<a href="{{path('BlogBundle_new')}}" class="buton"> Articol Nou</a> 
+<a href="{{ path('BlogBundle_edit', {'id':blog.id}) }}"class="buton">Editare Articol</a>
+<a onClick="confirmDelete({{blog.id}})" class="buton">Sterge Articol</a>
+{%endif%}
+<a href="{{path('BlogBundle_list')}}" class="buton"> Lista articole</a>
+
+	<article class="blog">
+		<div>
+		<table align="center">
+		  <tr><td>
+			<h2> {{blog.title}}</h2>
+		  </td></tr>
+		  <tr><td style="width:450px;">
+			<p> {{blog.content}}</p>
+		  </td></tr>
+			
+		</div>
+	</article>
+{% endblock %}

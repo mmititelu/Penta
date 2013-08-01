@@ -1,0 +1,52 @@
+blog_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: BlogBundle:Default:index }
+
+BlogBundle_homepage:
+    pattern: /
+    defaults: { _controller: BlogBundle:Page:index }
+    requirements:
+        _method: GET
+
+BlogBundle_show:
+    pattern: /list/{id}
+    defaults: { _controller: BlogBundle:Page:show}
+    requirements:
+        _method: GET
+        id: \d+
+
+BlogBundle_list:
+    pattern: list
+    defaults: { _controller: BlogBundle:Page:list}
+    requirements:
+        _method: GET
+
+BlogBundle_new:
+    pattern: admin/new
+    defaults: { _controller: BlogBundle:Page:new}
+    requirements:
+        _method: GET|POST
+        
+BlogBundle_delete:
+    pattern: admin/delete/{id}
+    defaults: { _controller: BlogBundle:Page:delete}
+    requirements:
+        _method: GET
+        id: \d+
+
+BlogBundle_edit:
+    pattern: admin/edit/{id}
+    defaults: { _controller: BlogBundle:Page:edit}
+    requirements:
+        _method: GET|POST
+        id: \d+
+     
+login:
+    pattern: /login
+    defaults: {_controller: AcmeSecurityBundle:Security:login}
+login_check:
+    pattern: /login_check
+    
+logout:
+    pattern: /logout
+    defaults: {_controller: AcmeSecurityBundle:Security:logout}

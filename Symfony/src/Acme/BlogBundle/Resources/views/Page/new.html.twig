@@ -1,0 +1,27 @@
+{# src/Acme/BlogBundle/Resources/views/Page/new.html.twig #}
+{% extends 'BlogBundle::layout.html.twig' %}
+{% block title %}Articol Nou{% endblock %}
+
+{% block body %} 
+ <header>
+	<div class="center_div">
+		<p id="d">Blog Website</p>
+	    {% if app.user %}
+            <p style="font-size:12px;">Logged in as: <b>{{ app.user.username }} </b>
+            <a href="{{path('logout')}}" >Logout</a></p>
+        {%endif%}
+    </div>
+      <a href="{{path('BlogBundle_list')}}" class="buton">Lista articole</a></br></br>
+    </header>
+    
+    <form action="{{ path('BlogBundle_new') }}" method="post" {{ form_enctype(form) }} class="blogger">
+     {{ form_errors(form) }}
+    
+     {{ form_row(form.title) }}
+     {{ form_row(form.content) }}
+    
+     {{form_rest(form) }}
+    
+     <input type="submit" value="Adauga" class="buton" name="formular"/>
+    </form>
+{% endblock %}

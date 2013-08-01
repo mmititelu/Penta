@@ -1,0 +1,15 @@
+{% if error %}
+    <div>{{ error.message }}</div>
+{% endif %}
+{% block stylesheets %}
+			 <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+<form action="{{ path('login_check') }}" method="post" class="formular">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}"/></br>
+    <label for="password">Password:</label>
+    <input type= "password" id="password" name="_password" /></br>
+    <input type="checkbox" id="remember_me" name="_remember_me" checked />
+    <label for="remember_me">Keep me logged in</label>
+    <button type="submit">login</button>
+</form>

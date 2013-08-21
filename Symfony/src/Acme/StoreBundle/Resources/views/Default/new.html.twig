@@ -1,0 +1,16 @@
+{# src/Acme/StoreBundle/Resources/views/Default/new.html.twig #}
+
+{% block title %}Articol Nou{% endblock %}
+
+{% block body %} 
+<form action="{{ path('store_create') }}" method="post" {{ form_enctype(form) }} class="blogger">
+ {{ form_errors(form) }}
+
+ {{ form_row(form.name) }}
+ {{ form_row(form.price) }}
+
+ {{form_rest(form) }}
+
+ <input type="submit" value="Adauga" class="buton" name="formular"/>
+</form>
+{% endblock %}

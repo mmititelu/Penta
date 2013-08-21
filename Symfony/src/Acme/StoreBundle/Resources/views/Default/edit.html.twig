@@ -1,0 +1,18 @@
+{# src/Acme/StoreBundle/Resources/views/Default/edit.html.twig #}
+
+{% block body %} 
+    <header>
+        <h1>Editare Produs</h1>  
+    </header>
+    <form action="{{ path('store_update',{'id':product.id}) }}" method="post" {{ form_enctype(form) }} class="blogger">
+     {{ form_errors(form) }}
+     
+     
+     {{ form_row(form.name) }}
+     {{ form_row(form.price) }}
+    
+     {{form_rest(form) }}
+    
+     <input type="submit" value="Modifica" class="buton"/>
+    </form>
+ {% endblock %}

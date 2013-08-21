@@ -1,0 +1,17 @@
+{# src/Acme/BlogBundle/Resources/views/Page/list.html.twig #}
+{% block body %}
+ <a href="{{path('store_create')}}" class="buton"> Produs Nou</a> 
+<div>
+<table align="center"> 
+        {% for product in products %}
+  <tr><td>
+        <a href="{{ path('store_show', {'id':product.id}) }}"><h2>{{product.Name}}</h2></a>
+  </td></tr>
+  <tr><td>
+        {{product.price}}
+  </td></tr>
+        {% endfor %}
+</table> 
+</div>
+
+{% endblock %}

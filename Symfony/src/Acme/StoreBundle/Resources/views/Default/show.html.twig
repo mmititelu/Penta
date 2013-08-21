@@ -1,0 +1,16 @@
+{# src/Acme/StoreBundle/Resources/views/Default/show.html.twig #}
+
+{% block body %}
+	
+<a href="{{path('store_create')}}" class="buton"> Produs Nou</a> 
+<a href="{{ path('store_update', {'id':product.id}) }}"class="buton">Editare Produs</a>
+<a href="{{ path('store_delete', {'id':product.id}) }}" class="buton">Sterge Produs</a>
+<table align="center">
+  <tr><td>
+        <h2> {{product.Name}}</h2>
+  </td></tr>
+  <tr><td>
+        <p> {{product.price}}</p>
+  </td></tr>
+</table>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% block stylesheets %}
+			 <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+        {% if app.user %}
+            <p style="font-size:12px;">Logged in as: <b>{{ app.user.username }} </b>
+            <a href="{{path('logout')}}" >Logout</a></p>
+            {% else %}
+            <p>aaaaaa </p>
+        {%endif%}
+<form action="{{ path('account_check')}}" method="post" class="formular">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="_email" value="{{ email }}"/></br>
+    <label for="password">Password:</label>
+    <input type= "password" id="password" name="_password" /></br>
+    <input type="checkbox" id="remember_me" name="_remember_me" checked />
+    <label for="remember_me">Keep me logged in</label>
+    <button type="submit">login</button>
+</form>

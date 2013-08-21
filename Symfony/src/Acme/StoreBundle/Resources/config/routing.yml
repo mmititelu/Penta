@@ -1,0 +1,23 @@
+store_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: StoreBundle:Default:index }
+    
+store_create:
+    pattern: /create
+    defaults: { _controller: StoreBundle:Default:create }
+    
+store_show:
+    pattern: /show/{id}
+    defaults: { _controller: StoreBundle:Default:show }
+    
+store_update:
+    pattern: /update/{id}
+    defaults: { _controller: StoreBundle:Default:update }
+    
+store_list:
+    pattern: /list
+    defaults: { _controller: StoreBundle:Default:list }
+    
+store_delete:
+    pattern: /delete/{id}
+    defaults: { _controller: StoreBundle:Default:delete }

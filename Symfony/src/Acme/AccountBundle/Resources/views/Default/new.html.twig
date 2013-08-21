@@ -1,0 +1,15 @@
+{# src/Acme/StoreBundle/Resources/views/Default/new.html.twig #}
+
+{% block title %}Cont Nou{% endblock %}
+
+{% block body %} 
+<form action="{{ path('account_create') }}" method="post" {{ form_enctype(form) }} class="blogger">
+ {{ form_errors(form) }}
+ {{ form_row(form.email) }}
+ {{ form_row(form.password) }}
+
+ {{form_rest(form) }}
+
+ <input type="submit" value="Adauga" class="buton" name="formular"/>
+</form>
+{% endblock %}

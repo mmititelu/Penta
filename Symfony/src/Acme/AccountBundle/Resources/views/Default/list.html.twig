@@ -1,0 +1,21 @@
+{# src/Acme/AccountBundle/Resources/views/Default/list.html.twig #}
+
+{% block body %}
+ 
+<div>
+<table align="center"> 
+        {% for product in products %}
+  <tr><td>
+       <h2>{{product.email}}</h2>
+  </td></tr>
+  <tr><td>
+        {{product.password}}
+  </td></tr>
+    <tr><td>
+        {{product.id}}
+  </td></tr>
+        {% endfor %}
+</table> 
+</div>
+
+{% endblock %}

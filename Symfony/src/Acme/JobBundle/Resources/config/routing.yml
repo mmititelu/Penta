@@ -1,0 +1,22 @@
+job_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: JobBundle:Default:index }
+    
+JobBundle_list:
+    pattern:  /list
+    defaults: { _controller: JobBundle:Default:list }
+JobBundle_create:
+    pattern:  /create
+    defaults: { _controller: JobBundle:Default:create }
+JobBundle_edit:
+    pattern:  /edit/{id}
+    defaults: { _controller: JobBundle:Default:edit }
+JobBundle_show:
+    pattern:  /show/{id}
+    defaults: { _controller: JobBundle:Default:show }
+JobBundle_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: JobBundle:Default:delete }
+JobBundle_category:
+    pattern:  /category/{slug}
+    defaults: { _controller: JobBundle:Category:show }

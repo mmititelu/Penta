@@ -1,0 +1,62 @@
+JobBundle:
+    pattern:  /
+    defaults: { _controller: "JobeetBundle:Job:index" }
+
+    
+JobBundle_show:
+    pattern:  /{company}/{location}/{id}/{position}
+    defaults: { _controller: "JobeetBundle:Job:show" }
+
+JobBundle_new:
+    pattern:  admin/new
+    defaults: { _controller: "JobeetBundle:Job:new" }
+
+JobBundle_create:
+    pattern:  /create
+    defaults: { _controller: "JobeetBundle:Job:create" }
+    requirements: { _method: post }
+
+JobBundle_edit:
+    pattern:  /{token}/edit
+    defaults: { _controller: "JobeetBundle:Job:edit" }
+
+JobBundle_update:
+    pattern:  /{token}/update
+    defaults: { _controller: "JobeetBundle:Job:update" }
+    requirements: { _method: post|put }
+
+JobBundle_delete:
+    pattern:  /{token}/delete
+    defaults: { _controller: "JobeetBundle:Job:delete" }
+    requirements: { _method: post|delete }
+    
+JobBundle_category:
+    pattern:  /category/{slug}/{page}
+    defaults: { _controller: JobeetBundle:Category:show, page: 1 }
+    
+JobBundle_publish:
+    pattern:  /{token}/publish
+    defaults: { _controller: "JobeetBundle:Job:publish" }
+    requirements: { _method: post }
+    
+JobBundle_extend:
+    pattern:  /{token}/extend
+    defaults: { _controller: "JobeetBundle:Job:extend" }
+    requirements: { _method: post }
+    
+JobBundle_preview:
+    pattern:  /{company}/{location}/{token}/
+    defaults: { _controller: "JobeetBundle:Job:preview" }
+
+login:
+    pattern:   /login
+    defaults:  { _controller: JobeetBundle:Default:login }
+    
+login_check:
+    pattern:   /login_check
+    
+logout:
+    pattern:   /logout
+    defaults:  { _controller: JobeetBundle:Default:logout }
+   
+  

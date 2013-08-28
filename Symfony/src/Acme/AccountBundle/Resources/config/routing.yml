@@ -10,17 +10,7 @@ account_create:
 account_redirect:
     pattern: /list
     defaults: { _controller: StoreBundle:Default:list}
-account_login:
-    pattern: /login
-    defaults: { _controller: AccountBundle:Default:login}
-account_check:
-    pattern: /check
-    defaults: { _controller: AccountBundle:Default:check}
-    requirements:
-        _method: POST
-account_logout:
-    pattern: /logout
-    defaults: { _controller: AccountBundle:Default:logout}
+
 account_listu:
     pattern: /listu
     defaults: { _controller: AccountBundle:Default:listu}

@@ -20,8 +20,20 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "doctrine/data-fixtures" : "dev-master"
-    },
+        "doctrine/data-fixtures" : "dev-master",
+        "stof/doctrine-extensions-bundle": "dev-master",
+        "doctrine/mongodb-odm": "1.0.x-dev",
+        "doctrine/mongodb-odm-bundle": "3.0.x-dev",
+        "knplabs/knp-menu-bundle": "1.1.2",
+        "knplabs/knp-menu": "1.1.2",
+        "sonata-project/admin-bundle": "dev-master", 
+        "sonata-project/block-bundle" : "2.2.3",
+        "sonata-project/exporter" : "1.3.0",
+        "sonata-project/jquery-bundle" : "1.8.0",
+        "sonata-project/cache-bundle" : "dev-master",
+        "sonata-project/intl-bundle" : "2.1.*",
+        "sonata-project/doctrine-orm-admin-bundle" : "2.2.*@dev"
+        },
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",

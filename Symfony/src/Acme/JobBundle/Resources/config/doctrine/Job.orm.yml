@@ -1,6 +1,0 @@
-# /src/Acme/JobBundle/Resources/config/doctrine/Job.orm.yml
- 
-Acme\JobBundle\Entity\Job:
-  type: entity
-  repositoryClass: Acme\JobBundle\Repository\JobRepository
-  # ...

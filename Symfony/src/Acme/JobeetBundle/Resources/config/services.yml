@@ -1,0 +1,19 @@
+parameters:
+#    jobeet.example.class: Acme\JobeetBundle\Example
+
+#services:
+#    jobeet.example:
+#        class: %jobeet.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+services:
+    acme.jobeet.admin.category:
+        class: Acme\JobeetBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: jobeet, label: Categories }
+        arguments: [null, Acme\JobeetBundle\Entity\Category, JobeetBundle:CategoryAdmin]
+ 
+    acme.jobeet.admin.job:
+        class: Acme\JobeetBundle\Admin\JobAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: jobeet, label: Jobs }
+        arguments: [null, Acme\JobeetBundle\Entity\Job, JobeetBundle:JobAdmin]

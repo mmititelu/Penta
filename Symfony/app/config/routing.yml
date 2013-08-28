@@ -1,16 +1,44 @@
-acme_security:
-    resource: "@AcmeSecurityBundle/Resources/config/routing.yml"
+jobeet:
+    resource: "@JobeetBundle/Resources/config/routing/job.yml"
     prefix:   /
 
-user:
-    resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /
+#job:
+#    resource: "@JobBundle/Resources/config/routing.yml"
+#    prefix:   /
 
-blog:
-    resource: "@BlogBundle/Resources/config/routing.yml"
-    prefix:   /
+#account:
+#    resource: "@AccountBundle/Resources/config/routing.yml"
+#    prefix:   /
 
-acme_hello:
-    resource: "@AcmeHelloBundle/Resources/config/routing.yml"
-    prefix:   /
+#store:
+#    resource: "@StoreBundle/Resources/config/routing.yml"
+#    prefix:   /
 
+#acme_security:
+#    resource: "@AcmeSecurityBundle/Resources/config/routing.yml"
+#    prefix:   /
+
+#user:
+#    resource: "@UserBundle/Resources/config/routing.yml"
+#    prefix:   /
+
+#blog:
+#    resource: "@BlogBundle/Resources/config/routing.yml"
+#    prefix:   /
+
+#acme_hello:
+#    resource: "@AcmeHelloBundle/Resources/config/routing.yml"
+#    prefix:   /
+
+#store:
+#    resource: "@StoreBundle/Resources/config/routing.yml"
+#    prefix:   /
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+ 
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin

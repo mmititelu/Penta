@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Entity/Category.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Controller/CategoryController.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Repository/JobRepository.php</file>
+            <file>file:/C:/wamp/www/Symfony/app/config/security.yml</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Tests/Controller/JobControllerTest.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/config/services.yml</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/config/doctrine/Category.orm.yml</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/views/Job/list.html.twig</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/views/Job/edit.html.twig</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Form/JobType.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Utils/Jobeet.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Tests/Utils/JobeetTest.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Controller/CategoryAdminController.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/views/Job/admin.html.twig</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/views/Job/show.html.twig</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/views/Category/show.html.twig</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Controller/DefaultController.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Controller/JobController.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/views/Default/login.html.twig</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Command/JobeetUsersCommand.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/config/validation.yml</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/views/Layout.html.twig</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Entity/Job.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/views/Job/index.html.twig</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Entity/User.php</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/config/routing/job.yml</file>
+            <file>file:/C:/wamp/www/Symfony/app/config/config.yml</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/config/doctrine/User.orm.yml</file>
+            <file>file:/C:/wamp/www/Symfony/src/Acme/JobeetBundle/Resources/views/Job/new.html.twig</file>
+        </group>
+    </open-files>
+</project-private>

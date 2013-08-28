@@ -1,5 +1,11 @@
 {# src/Acme/BlogBundle/Resources/views/Page/list.html.twig #}
 {% block body %}
+        {% if app.user %}
+            <p style="font-size:12px;">Logged in as: <b>{{ app.user.username }} </b>
+            <a href="{{path('logout')}}" >Logout</a></p>
+            {% else %}
+            <p>aaaaaa </p>
+        {%endif%}
  <a href="{{path('store_create')}}" class="buton"> Produs Nou</a> 
 <div>
 <table align="center"> 

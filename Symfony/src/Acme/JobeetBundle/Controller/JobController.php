@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Acme\JobeetBundle\Entity\Job;
 use Acme\JobeetBundle\Form\JobType;
 
+
 /**
  * Job controller.
  *
@@ -334,4 +335,21 @@ class JobController extends Controller
          ->add('token', 'hidden')
          ->getForm();
     }
+    
+        public function searchAction(Request $request)
+    {   
+        
+        $em = $this->getDoctrine()->getManager();
+        $query = $this->getRequest()->get('query');
+ 
+        if(!$query) {
+            return $this->redirect($this->generateUrl('JobBundle'));
+        }
+ 
+        $jobs = $em->getRepository('JobeetBundle:Job')->getForLuceneQuery($query);
+ 
+        return $this->render('JobeetBundle:Job:search.html.twig', array('jobs' => $jobs));
+    
+    }
+   
 }

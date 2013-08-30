@@ -19,14 +19,47 @@ class JobeetCleanupCommand extends ContainerAwareCommand {
     ;
   }
  
+//  protected function execute(InputInterface $input, OutputInterface $output)
+//  {
+//    $days = $input->getArgument('days');
+// 
+//    $em = $this->getContainer()->get('doctrine')->getEntityManager();
+//    $nb = $em->getRepository('JobeetBundle:Job')->cleanup($days);
+// 
+//    $output->writeln(sprintf('Removed %d stale jobs', $nb));
+//  }
+  
   protected function execute(InputInterface $input, OutputInterface $output)
-  {
-    $days = $input->getArgument('days');
+    {
+        $days = $input->getArgument('days');
  
-    $em = $this->getContainer()->get('doctrine')->getEntityManager();
-    $nb = $em->getRepository('JobeetBundle:Job')->cleanup($days);
+        $em = $this->getContainer()->get('doctrine')->getManager();
  
-    $output->writeln(sprintf('Removed %d stale jobs', $nb));
-  }
+        // cleanup Lucene index
+        $index = Job::getLuceneIndex();
+ 
+        $q = $em->getRepository('JobeetBundle:Job')->createQueryBuilder('j')
+          ->where('j.expires_at < :date')
+          ->setParameter('date',date('Y-m-d'))
+          ->getQuery();
+ 
+        $jobs = $q->getResult();
+        foreach ($jobs as $job)
+        {
+          if ($hit = $index->find('pk:'.$job->getId()))
+          {
+            $index->delete($hit->id);
+          }
+        }
+ 
+        $index->optimize();
+ 
+        $output->writeln('Cleaned up and optimized the job index');
+ 
+        // Remove stale jobs
+        $nb = $em->getRepository('JobeetBundle:Job')->cleanup($days);
+ 
+        $output->writeln(sprintf('Removed %d stale jobs', $nb));
+    }
 }
 ?>

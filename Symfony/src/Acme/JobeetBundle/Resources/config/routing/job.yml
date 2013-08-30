@@ -59,4 +59,8 @@ logout:
     pattern:   /logout
     defaults:  { _controller: JobeetBundle:Default:logout }
    
+
+JobBundle_search: 
+    pattern:   /search
+    defaults:  { _controller: JobeetBundle:Job:search }
   

@@ -94,25 +94,51 @@ class JobRepository extends EntityRepository
     
     // src/Ens/JobeetBundle/Repository/JobRepository.php
 
-public function getLatestPost()
-{
-    $query = $this->createQueryBuilder('j')
-        ->where('j.expires_at > :date')
-        ->setParameter('date', date('Y-m-d H:i:s', time()))
-        ->andWhere('j.is_activated = :activated')
-        ->setParameter('activated', 1)
-        ->orderBy('j.expires_at', 'DESC')
-        ->setMaxResults(1)
-        ->getQuery();
+    public function getLatestPost()
+    {
+        $query = $this->createQueryBuilder('j')
+            ->where('j.expires_at > :date')
+            ->setParameter('date', date('Y-m-d H:i:s', time()))
+            ->andWhere('j.is_activated = :activated')
+            ->setParameter('activated', 1)
+            ->orderBy('j.expires_at', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery();
  
-    try {
-        $job = $query->getSingleResult();
-    } catch (\Doctrine\Orm\NoResultException $e) {
-        $job = null;
+        try {
+            $job = $query->getSingleResult();
+        } catch (\Doctrine\Orm\NoResultException $e) {
+            $job = null;
+        }
+ 
+        return $job;
+    }   
+
+         public function getForLuceneQuery($query)
+    {
+        $hits = \Acme\JobeetBundle\Entity\Job::getLuceneIndex()->find($query);
+ 
+        $pks = array();
+        foreach ($hits as $hit)
+        {
+          $pks[] = $hit->pk;
+        }
+ 
+        if (empty($pks))
+        {
+          return array();
+        }
+ 
+        $q = $this->createQueryBuilder('j')
+            ->where('j.id IN (:pks)')
+            ->setParameter('pks', $pks)
+            ->andWhere('j.is_activated = :active')
+            ->setParameter('active', 1)
+            ->setMaxResults(20)
+            ->getQuery();
+ 
+        return $q->getResult();
     }
- 
-    return $job;
-}
  
 
 }
